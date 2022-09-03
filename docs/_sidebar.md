@@ -1,3 +1,3 @@
 <!-- docs/_sidebar.md -->
-- **Machine Learning**
-  - [序言](chapter0)
+**Machine Learning**
+  [序言](chapter0)
