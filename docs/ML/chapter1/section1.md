@@ -6,7 +6,7 @@
 
 <center>
 <div >
-    <div style="float:left; width:40%; padding-left:100px">
+    <div style="float:left; width:42%; padding-left:100px">
         <img src="ML\ML_figure\regression_case.png" width="100%">
         <div style="margin-bottom: 50px; margin-top: 20px>
         <font size="3">图1.1.1 Regression Task</font>
@@ -15,7 +15,7 @@
     <div style="float:right; width:57%; padding-right:100px">
         <img src="ML\ML_figure\classification_case.png" width="100%">
         <div style="margin-bottom: 50px; margin-top: 20px>
-        <font size="3">图1.2 Classification Task</font>
+        <font size="3">图1.1.2 Classification Task</font>
         </div>
     </div> 
 </div>

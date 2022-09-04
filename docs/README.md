@@ -36,6 +36,7 @@
 * [Andrew Ng 机器学习教程](https://www.deeplearning.ai/courses/machine-learning-specialization/)
 * [Hung-yi Lee 机器学习课程](https://speech.ee.ntu.edu.tw/~hylee/ml/2022-spring.php)
 * [刘建平Pinard 博客](https://www.cnblogs.com/pinard/)
+* [B站: 王木头学科学](https://space.bilibili.com/504715181)
 
 有待补充...
 

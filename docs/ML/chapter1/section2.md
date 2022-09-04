@@ -40,32 +40,32 @@
 
 - 均方误差(Mean Square Error , MSE)：
 
-\begin{equation}
+$$
 E_\text{MSE}(f;D)=\frac{1}{m}\sum_{i=1}^m{(f(x_i)-y_{i})^2}
 \tag{1.2.1}
-\end{equation}
+$$
 
 
 - 平均绝对误差(Mean Absolute Error, MAE)：
 
-\begin{equation}
+$$
 E_{\text{MAE}}(f;D)=\frac{1}{m}\sum_{i=1}^m|f(x_i)-y_i|
 \tag{1.2.2}
-\end{equation}
+$$
 
 - 均方根误差(Root Mean Squared Error, RMSE)：
 
-\begin{equation}
+$$
 E_{\text{RMSE}}(f;D)=\sqrt{E_{\text{MSE}}(f;D)}=\sqrt{\frac{1}{m}\sum_{i=1}^m{(f(x_i)-y_i)^2}}
 \tag{1.2.3}
-\end{equation}
+$$
 
 - R Squared ($R^2$):
 
-\begin{equation}
+$$
 E_{R^2}(f;D)=1-\frac{\sum_{i=1}^m{(f(x_i)-y_i)^2}}{\sum_{i=1}^m{(y_i-\bar{y})^2}}
 \tag{1.2.4}
-\end{equation}
+$$
 
 其中，MSE、MAE、RMSE的结果越小，代表模型的性能越好。$R^2$的取值范围为$(0,1)$，$R^2$越接近$1$，模型的性能越好。
 
@@ -97,40 +97,33 @@ E_{R^2}(f;D)=1-\frac{\sum_{i=1}^m{(f(x_i)-y_i)^2}}{\sum_{i=1}^m{(y_i-\bar{y})^2}
 根据混淆矩阵中的不同组合，分类任务中常用的四种评估指标，准确率(Accuracy)，精确率(Precision)，查全率(召回率，Recall)以及F-Measure：
 
 - 准确率(Accuracy)：评价分类问题的性能指标一般是分类准确率，即对于给定的数据，分类正确的样本数占总样本数的比例。但是准确率这一指标在一些正负分布不均匀（数据不平衡）的数据集上会有偏差。例如，一个数据集中的样本有100个正样本和有9900个负样本，如果有一个模型直接把所有的样本都预测为负， 模型的准确率也会高达99\%，但是由于它把所有的正样本都错误分类，因此这个模型实际性能是非常差的。
-    \begin{equation}
-    \begin{split}
+
+    $$
     \text{Accuracy} = \frac{TP+TN}{TP+TN+FP+FN}
-    \end{split}
     \tag{1.2.5}
-    \end{equation}
+    $$
 
 - 精确率(Precision)：精确率是指在预测为正类的样本中标签正类所占的比例。即模型分类出是正类的所有样本中，有多少是真的正类。
 
-    \begin{equation}
-    \begin{split}
+    $$
     \text{Precision}=\frac{TP}{TP+FP}
-    \end{split}
     \tag{1.2.6}
-    \end{equation}
+    $$
     
     
 - 召回率(Recall)：召回率是指在真实为正类的样本中被预测为正类的比例。即样本标签本来是正类的样本中，模型分类成功找回了多少真的正类。
 
-    \begin{equation}
-    \begin{split}
+    $$
     \text{Recall}=\frac{TP}{TP+FN}
-    \end{split}
     \tag{1.2.7}
-    \end{equation}
+    $$
 
 - F-Measure：因为Precision和Recall是一对相互矛盾的量，当P高时，R往往相对较低，当R高时， P往往相对较低。所以为了更好的评价分类器的性能，一般使用F-Measure作为评价标准来衡量分类器的综合性能，可以理解为是将精确率和召回率进行一个“平均”结合。
 
-    \begin{equation}
-    \begin{split}
+    $$
     \text{F}=\frac{(\alpha^2+1) \times \text{Precision} \times \text{Recall}}{\text{Precision} + \text{Recall}}
-    \end{split}
     \tag{1.2.8}
-    \end{equation}
+    $$
     其中，一般情况下我们会把参数$\alpha$设为$1$，因此也称为F1-score。
 
 ### 1.2.4.2 二分类评估指标 (Criteria for Multiclass Classification)
@@ -149,30 +142,30 @@ E_{R^2}(f;D)=1-\frac{\sum_{i=1}^m{(f(x_i)-y_i)^2}}{\sum_{i=1}^m{(y_i-\bar{y})^2}
 
 - 宏观准确率(marco-Accuracy)：
     
-    \begin{equation}
+    $$
     \text{Accuracy} = \frac{T}{T+F} 
     \tag{1.2.9}
-    \end{equation}
+    $$
 
 - 宏观精确率(marco-Precision)：
     
-    \begin{equation}
+    $$
     \text{macro-Precision} =\frac{1}{n} \sum^{n}_{k=0}\frac{T^k_k}{\sum_i F^{k}_i + T^k_k} 
     \tag{1.2.10}
-    \end{equation}
+    $$
     
 - 宏观召回率(marco-Recall)：		
-    \begin{equation}
+    $$
     \text{macro-Recall} = \frac{1}{n} \sum^{n}_{k=0}\frac{T^{k}_k}{\sum_j F^{j}_k + T^k_k}
     \tag{1.2.11}
-    \end{equation}
+    $$
 
 - 宏观F Measure (macro-F1)：		
-    \begin{equation}
+    $$
     \text{macro-F1} = \frac{1}{n} \sum^{n}_
     {k=0}\frac{(\alpha^2+1)T^{k}_{k}}{\sum_i F^{k}_i+\sum_j F^{j}_k + 2T^k_k}, (\alpha=1)
     \tag{1.2.12}
-    \end{equation}
+    $$
 
 其中，准确率是一种针对的是全部类别的评估指标，因此宏观准确率就是准确率。与准确率不同的是，召回率、精确率和F1指标是针对数据样本中单独一种类别的评估指标，而准确率是针对样本中所有类别的指标，因此在计算宏观指标时，召回率、精确率和F1指标都需要计算出每一种类别的性能度量值最后再进行求和平均最终得到它们的宏观指标。多分类任务中，除了宏观指标外还有微观(micro)指标，其思路是将多分类结果中的$TP$、$FP$、$TN$、$FN$分别进行平均，再计算召回率、精确率和F1指标得到它们的微观指标。
 
