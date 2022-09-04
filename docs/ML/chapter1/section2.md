@@ -151,27 +151,27 @@ E_{R^2}(f;D)=1-\frac{\sum_{i=1}^m{(f(x_i)-y_i)^2}}{\sum_{i=1}^m{(y_i-\bar{y})^2}
     
     \begin{equation}
     \text{Accuracy} = \frac{T}{T+F} 
-    \label{eq:marco_accuracy}
+    \tag{1.2.9}
     \end{equation}
 
 - 宏观精确率(marco-Precision)：
     
     \begin{equation}
     \text{macro-Precision} =\frac{1}{n} \sum^{n}_{k=0}\frac{T^k_k}{\sum_i F^{k}_i + T^k_k} 
-    \label{eq:marco_precision}
+    \tag{1.2.10}
     \end{equation}
     
 - 宏观召回率(marco-Recall)：		
     \begin{equation}
     \text{macro-Recall} = \frac{1}{n} \sum^{n}_{k=0}\frac{T^{k}_k}{\sum_j F^{j}_k + T^k_k}
-    \label{eq:macro_recall}
+    \tag{1.2.11}
     \end{equation}
 
 - 宏观F Measure (macro-F1)：		
     \begin{equation}
     \text{macro-F1} = \frac{1}{n} \sum^{n}_
     {k=0}\frac{(\alpha^2+1)T^{k}_{k}}{\sum_i F^{k}_i+\sum_j F^{j}_k + 2T^k_k}, (\alpha=1)
-    \label{eq:macro_f}
+    \tag{1.2.12}
     \end{equation}
 
 其中，准确率是一种针对的是全部类别的评估指标，因此宏观准确率就是准确率。与准确率不同的是，召回率、精确率和F1指标是针对数据样本中单独一种类别的评估指标，而准确率是针对样本中所有类别的指标，因此在计算宏观指标时，召回率、精确率和F1指标都需要计算出每一种类别的性能度量值最后再进行求和平均最终得到它们的宏观指标。多分类任务中，除了宏观指标外还有微观(micro)指标，其思路是将多分类结果中的$TP$、$FP$、$TN$、$FN$分别进行平均，再计算召回率、精确率和F1指标得到它们的微观指标。
