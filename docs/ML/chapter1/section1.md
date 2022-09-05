@@ -1,4 +1,4 @@
-# 1 简介(Introduction)
+# 1.1 监督学习简介 (Introduction to Supervised Learning)
 ## 1.1.1 概览 (Overview)
 在Machine Learning中让机器进行学习的方法主要分为两大类，监督学习(Supervised Learning)和无监督学习(Unsupervised Learning)。监督学习的意思是建立一个数学模型，让模型(或称算法)通过学习输入数据集中的特征集(Feature)与之所对应标签(Label)的关系，然后在面对只有特征集的新数据时模型能够根据新数据的特征集准确判断出它们的标签。简而言之就是需要找到一个方程，让方程经过学习训练后能够准确地对新数据进行预测或者分类。
 

@@ -134,13 +134,13 @@ $$
 
 $$
 \begin{aligned}
-w&:= w-\eta\frac{\partial \mathrm{lost}(w,b)}{\partial w}\\
-b&:= b-\eta\frac{\partial \mathrm{lost}(w,b)}{\partial b}
+w&\gets w-\eta\frac{\partial \mathrm{lost}(w,b)}{\partial w}\\
+b&\gets b-\eta\frac{\partial \mathrm{lost}(w,b)}{\partial b}
 \end{aligned}
 \tag{1.3.10}
 $$
 
-其中“$:=$”是赋值符号。$\eta$是学习率(Learning Rate)，是一种需要人为设置的超参数(Hyperparameter)，它的作用是调整梯度下降时的步幅，通常会被设置为$0.1$到$1\times 10^-n$之间。另一方面，偏导项决定了权重参数更改的方向，因此偏导项和学习率共同决定了下降的步幅。如图1.3.2所示，设置不同的学习率会导致梯度下降的过程不同：
+其中“$\gets$”是赋值符号。$\eta$是学习率(Learning Rate)，是一种需要人为设置的超参数(Hyperparameter)，它的作用是调整梯度下降时的步幅，通常会被设置为$0.1$到$1\times 10^-n$之间。另一方面，偏导项决定了权重参数更改的方向，因此偏导项和学习率共同决定了下降的步幅。如图1.3.2所示，设置不同的学习率会导致梯度下降的过程不同：
 \begin{itemize}
 	\item [1.] 当学习率$\eta$很小：梯度下降的过程会很慢。
 	\item [2.] 当学习率$\eta$很大：梯度下降越过最低点，会导致模型不收敛甚至发散。

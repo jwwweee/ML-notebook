@@ -206,7 +206,7 @@ $$
 3. 对交叉熵损失函数进行求导，让关于参数$w,b$的损失函数$\mathrm{lost}(w,b)$的偏导数为0。类似地，对交叉熵函数的求导优化过程使用梯度下降法，其迭代过程为：
 
 $$
-w:= w-\eta\frac{\partial \mathrm{lost}(w,b)}{\partial w}
+w\gets w-\eta\frac{\partial \mathrm{lost}(w,b)}{\partial w}
 \tag{1.4.13}
 $$
 
