@@ -11,7 +11,7 @@
     - [1.7 贝叶斯分类器 (Bayesian Classifier)](ML\chapter1\section7)
     - [1.8 支持向量机 (Support Vector Machine)](ML\chapter1\section8)
     
-  - 2 无监督学习
+  - 2 无监督学习 (Unsupervised Learning)
     - [2.1 无监督学习简介 (Introduction to Unsupervised Learning)](ML\chapter2\section1)
     - [2.2 聚类 (Clustering)](ML\chapter2\section2)
     - [2.3 降维 (Dimensionality Reduction)](ML\chapter2\section3)
