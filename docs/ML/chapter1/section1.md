@@ -21,7 +21,6 @@
 </div>
 </center>
 
-
 ## 1.1.2 监督学习的流程 (Procedure of Supervised Learning)
 
 监督学习算法的流程如图1.1.3所示，流程主要分为三大部分：
