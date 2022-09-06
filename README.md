@@ -15,7 +15,7 @@
 
 
 ## 作者简介
-姜威(Wei Jiang)，目前就读于昆士兰大学(University of Queensland)，数据科学硕士。
+[姜威(Wei Jiang)](https://jwwweee.github.io/)，目前就读于昆士兰大学(University of Queensland)，数据科学硕士。
 
 - 致谢：感谢付宇霞同学对笔记的校对和排版做出的贡献。
 
