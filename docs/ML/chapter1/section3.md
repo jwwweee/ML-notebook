@@ -75,15 +75,15 @@ $$
 为了让模型去尽可能地拟合实际数据，那么就要找到合适的参数$w$与输入$X$相乘，从而让模型输出值$f(x_o)$与实际标签$y_o$的误差尽可能最小，即$|f(x_o)-y_o|$，但由于绝对值在定义域上不是全程可微的，因此我们需要将误差函数改写成$(f(x_o)-y_o)^2$。类似这样计算模型输出值$f(x_o)$与实际标签$y_o$误差的函数被称为损失函数(Loss Function)，回归任务中使用最广泛的损失函数为均方误差(Mean Square Error)，可以写作：
 
 $$
-\mathrm{lost}(w,b) = \frac{1}{2m}\sum_{i=1}^m({f(x_i)}-y_i)^2
+\mathrm{loss}(w,b) = \frac{1}{2m}\sum_{i=1}^m({f(x_i)}-y_i)^2
 \tag{1.3.7}
 $$
 
 其中$\frac{1}{2}$项是为了方便之后消去平方求导之后的2，$\frac{1}{m}$项是为了计算误差的全样本平均。
 
-在一维线性回归里，不同的权重参数$w$(也是斜率)可以拟合出不同的直线。关于权重参数$w$的损失函数$\mathrm{lost}(w)$的图像如图1.3.1所示（若推广到二维特征的时候，图像会变成一个碗状。），求解损失函数的最小值也就是让点$(w_o,\mathrm{lost}(w_o))$去到图1.3.1中抛物线的最底端。
+在一维线性回归里，不同的权重参数$w$(也是斜率)可以拟合出不同的直线。关于权重参数$w$的损失函数$\mathrm{loss}(w)$的图像如图1.3.1所示（若推广到二维特征的时候，图像会变成一个碗状。），求解损失函数的最小值也就是让点$(w_o,\mathrm{loss}(w_o))$去到图1.3.1中抛物线的最底端。
 
-求解$\mathrm{lost}(w)$的最小值实际上是一个优化问题，这个优化问题通过均方误差方程最小化求解模型参数$w$，该方法也叫“最小二乘法”(Least Square Method)。优化的过程所使用的算法通常有两种：数值微分法、梯度下降法。
+求解$\mathrm{loss}(w)$的最小值实际上是一个优化问题，这个优化问题通过均方误差方程最小化求解模型参数$w$，该方法也叫“最小二乘法”(Least Square Method)。优化的过程所使用的算法通常有两种：数值微分法、梯度下降法。
 
 <center>
     <img  src="ML\ML_figure\loss_function.png" width="35%">
@@ -95,25 +95,25 @@ $$
 
 ## 1.3.4 数值微分法 (Numerical Differential Method)
 
-数值微分法(Numerical Differential Method)是直接通过计算矩阵伪逆来得到权重参数$W$的直接方法。我们的优化目标是最小化损失函数$\min \mathrm{lost}(w,b)$，由于$\mathrm{lost}(w,b)$为凸函数(Convex)，因此当$\frac{\partial \mathrm{lost}(w,b)}{\partial w}=0$时，$\mathrm{lost}(w)$最小（求开口向上的二次函数求最小值方法是让其导数为0）。
+数值微分法(Numerical Differential Method)是直接通过计算矩阵伪逆来得到权重参数$W$的直接方法。我们的优化目标是最小化损失函数$\min \mathrm{loss}(w,b)$，由于$\mathrm{loss}(w,b)$为凸函数(Convex)，因此当$\frac{\partial \mathrm{loss}(w,b)}{\partial w}=0$时，$\mathrm{loss}(w)$最小（求开口向上的二次函数求最小值方法是让其导数为0）。
 
 当特征矩阵为$X$，权重向量为$\boldsymbol{w}$，标签向量为$\boldsymbol{y}$时，矩阵形式下的损失函数可以改写成以下形式：
 \begin{equation}
-\mathrm{lost}(\boldsymbol{w})=(X\boldsymbol{w}-\boldsymbol{y})^{T}(X\boldsymbol{w}-\boldsymbol{y})
+\mathrm{loss}(\boldsymbol{w})=(X\boldsymbol{w}-\boldsymbol{y})^{T}(X\boldsymbol{w}-\boldsymbol{y})
 \end{equation}
 
-接下来对矩阵形式的损失函数$\mathrm{lost}(w,b)$进行求导。损失函数$\mathrm{lost}(\boldsymbol{w})$是一个关于$\boldsymbol{w}$的复合函数，其求导过程如下：首先设$z=(X \boldsymbol{w}-y)$，那么就有$\mathrm{lost}(\boldsymbol{w})=z^{T}z$。接着假设我们最后的求导结果$\frac{\partial \mathrm{lost}(\boldsymbol{w})}{\partial \boldsymbol{w}}$的大小为$m \times 1$的向量，$\frac{\partial \mathrm{lost}(\boldsymbol{w})}{\partial z}$的大小为$n \times m$，$\frac{\partial z}{\partial \boldsymbol{w}}$的大小为$1 \times nwe$。由于是矩阵相乘，矩阵大小$(n,m) \times (n,1)$并不能得到$(m,1)$的矩阵，因此需要让$\frac{\partial z}{\partial \boldsymbol{w}}$项转置变成${\frac{\partial z}{\partial \boldsymbol{w}}}^T$，其大小改变为$(1,m)$的矩阵，并且将它移动到$\frac{\partial \mathrm{lost}(\boldsymbol{w})}{\partial z}$项的前面，便可进行相乘，则有：
+接下来对矩阵形式的损失函数$\mathrm{loss}(w,b)$进行求导。损失函数$\mathrm{loss}(\boldsymbol{w})$是一个关于$\boldsymbol{w}$的复合函数，其求导过程如下：首先设$z=(X \boldsymbol{w}-y)$，那么就有$\mathrm{loss}(\boldsymbol{w})=z^{T}z$。接着假设我们最后的求导结果$\frac{\partial \mathrm{loss}(\boldsymbol{w})}{\partial \boldsymbol{w}}$的大小为$m \times 1$的向量，$\frac{\partial \mathrm{loss}(\boldsymbol{w})}{\partial z}$的大小为$n \times m$，$\frac{\partial z}{\partial \boldsymbol{w}}$的大小为$1 \times nwe$。由于是矩阵相乘，矩阵大小$(n,m) \times (n,1)$并不能得到$(m,1)$的矩阵，因此需要让$\frac{\partial z}{\partial \boldsymbol{w}}$项转置变成${\frac{\partial z}{\partial \boldsymbol{w}}}^T$，其大小改变为$(1,m)$的矩阵，并且将它移动到$\frac{\partial \mathrm{loss}(\boldsymbol{w})}{\partial z}$项的前面，便可进行相乘，则有：
 
 $$
 \begin{aligned}
-	\frac{\partial \mathrm{lost}(\boldsymbol{w})}{\partial \boldsymbol{w}}&={\frac{\partial z}{\partial \boldsymbol{w}}}^T \cdot \frac{\partial \mathrm{lost}(\boldsymbol{w})}{\partial z}\\
+	\frac{\partial \mathrm{loss}(\boldsymbol{w})}{\partial \boldsymbol{w}}&={\frac{\partial z}{\partial \boldsymbol{w}}}^T \cdot \frac{\partial \mathrm{loss}(\boldsymbol{w})}{\partial z}\\
 	&=X^{T}(2(X\boldsymbol{w}-y))\\
 	&=2X^{T}(X\boldsymbol{w}-y)
 \end{aligned}
 \tag{1.3.8}
 $$
 
-然后令$\frac{\partial \mathrm{lost}(\boldsymbol{w},b)}{\partial \boldsymbol{w}}=0$，则$\boldsymbol{w}$的求解过程为：
+然后令$\frac{\partial \mathrm{loss}(\boldsymbol{w},b)}{\partial \boldsymbol{w}}=0$，则$\boldsymbol{w}$的求解过程为：
 
 $$
 \begin{aligned}
@@ -130,12 +130,12 @@ $$
 
 ## 1.3.5 梯度下降 (Gradient Descent)
 
-梯度下降(Gradient Descent)是另一种更广泛使用的模型参数优化方法，该方法是利用迭代更新的方法对各项参数进行优化。假设模型中的其中一项权重参数为$w_i$、偏置为$b$，那么损失函数$\mathrm{lost}(w,b)$关于权重参数$w_i$与偏置$b$的更新公式就可以写作：
+梯度下降(Gradient Descent)是另一种更广泛使用的模型参数优化方法，该方法是利用迭代更新的方法对各项参数进行优化。假设模型中的其中一项权重参数为$w_i$、偏置为$b$，那么损失函数$\mathrm{loss}(w,b)$关于权重参数$w_i$与偏置$b$的更新公式就可以写作：
 
 $$
 \begin{aligned}
-w&\gets w-\eta\frac{\partial \mathrm{lost}(w,b)}{\partial w}\\
-b&\gets b-\eta\frac{\partial \mathrm{lost}(w,b)}{\partial b}
+w&\gets w-\eta\frac{\partial \mathrm{loss}(w,b)}{\partial w}\\
+b&\gets b-\eta\frac{\partial \mathrm{loss}(w,b)}{\partial b}
 \end{aligned}
 \tag{1.3.10}
 $$

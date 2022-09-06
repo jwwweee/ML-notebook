@@ -111,7 +111,7 @@ $$
 
 其中，似然函数$l(w, b)$中为概率的乘积，意为每个样本正确分类的概率都是同时发生的。如同之前所说，我们希望的是这个同时发生的概率达到最大化，即$w^*,b^{*}=\mathrm{arg}\, \mathrm{max}\, l(w,b)$
 
-2. 将式1.4.5中的“乘法”变成“加法”。具体做法是对式子中的每一项添加负号再取对数，那么最终求解方程最大值$w^*,b^{*}=\mathrm{arg}\, \mathrm{max}\, l(w,b)$就会变成求最小值$w^*,b^{*}=\mathrm{arg}\, \mathrm{max}\, -\mathrm{ln}(l(w,b))$。其中$ -\mathrm{ln}(\mathrm{lost}(w,b))$可以展开为：
+2. 将式1.4.5中的“乘法”变成“加法”。具体做法是对式子中的每一项添加负号再取对数，那么最终求解方程最大值$w^*,b^{*}=\mathrm{arg}\, \mathrm{max}\, l(w,b)$就会变成求最小值$w^*,b^{*}=\mathrm{arg}\, \mathrm{max}\, -\mathrm{ln}(l(w,b))$。其中$ -\mathrm{ln}(\mathrm{loss}(w,b))$可以展开为：
 
 $$
 \begin{aligned}
@@ -162,7 +162,7 @@ $$
 
 $$
 \begin{aligned}
-\mathrm{lost}(h_{w, b}(x),y)&=-\frac{1}{m}\sum_{i=1}^{m}l(w, b)\\
+\mathrm{loss}(h_{w, b}(x),y)&=-\frac{1}{m}\sum_{i=1}^{m}l(w, b)\\
 &=-\frac{1}{m}\sum_{i=1}^{m}[y_{i}\mathrm{ln}(h_{w, b}(x_{i}))+(1-y_{i})\mathrm{ln}(1-h_{w, b}(x_{i}))]
 \end{aligned}
 \tag{1.4.10}
@@ -171,7 +171,7 @@ $$
 式1.4.10即为对数几率回归的损失函数，也称为交叉熵函数(Cross Entropy Function)。交叉熵函数的图像如图1.4.6所示，上式也可以写作：
 
 $$
-\mathrm{lost}(h_{w, b}(x),y)=\left\{
+\mathrm{loss}(h_{w, b}(x),y)=\left\{
 \begin{aligned}
 -\mathrm{ln}(h_{w, b}(x)) & , & if \quad  y=1, \\
 -\mathrm{ln}(1-h_{w, b}(x)) & , & if \quad  y=0.
@@ -203,16 +203,16 @@ $$
 
 可以看到，式1.4.12中的最后一步同时出现了$p$的信息熵与$p$的交叉熵两项（定义参见交叉熵信息熵），我们希望的是$p$的交叉熵尽可能与它信息熵的差越小越好。根据吉布斯不等式(Gibbs-Ungleichung)，若$\sum_{c=1}^C p_c=\sum_{c=1}^C q_c=1$，且$p_c, q_c \in(0,1]$，则有$-\sum_{c=1}^n p_c \log p_c \leq-\sum_{c=1}^n p_c \log q_c$。因此，$p$的交叉熵始终大于其信息熵，我们只需要让交叉熵作为损失函数让它最小化就可以了。到这里我们就介绍了交叉熵函数的推导过程和定义，以及解释了为什么交叉熵函数可以作为损失函数。
 
-3. 对交叉熵损失函数进行求导，让关于参数$w,b$的损失函数$\mathrm{lost}(w,b)$的偏导数为0。类似地，对交叉熵函数的求导优化过程使用梯度下降法，其迭代过程为：
+3. 对交叉熵损失函数进行求导，让关于参数$w,b$的损失函数$\mathrm{loss}(w,b)$的偏导数为0。类似地，对交叉熵函数的求导优化过程使用梯度下降法，其迭代过程为：
 
 $$
-w\gets w-\eta\frac{\partial \mathrm{lost}(w,b)}{\partial w}
+w\gets w-\eta\frac{\partial \mathrm{loss}(w,b)}{\partial w}
 \tag{1.4.13}
 $$
 
 $$
-\frac{\partial \mathrm{lost}(w,b)}{\partial w} = \frac{1}{m}\sum_{i=1}^m({f(x_{i})}-y_{i})x_{i}
+\frac{\partial \mathrm{loss}(w,b)}{\partial w} = \frac{1}{m}\sum_{i=1}^m({f(x_{i})}-y_{i})x_{i}
 \tag{1.4.14}
 $$
 
-公式1.4.14表明，$\mathrm{lost}(w,b)$的求导结果和MSE的求导结果完全一致。在Logistic回归中不使用MSE函数而选择交叉熵h函数是因为使用MSE函数会出现梯度消失现象，以及MSE求导后的结果为非凸函数，不易求解并且会得到局部最优。
+公式1.4.14表明，$\mathrm{loss}(w,b)$的求导结果和MSE的求导结果完全一致。在Logistic回归中不使用MSE函数而选择交叉熵h函数是因为使用MSE函数会出现梯度消失现象，以及MSE求导后的结果为非凸函数，不易求解并且会得到局部最优。
