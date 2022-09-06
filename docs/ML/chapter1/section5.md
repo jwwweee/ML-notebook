@@ -112,7 +112,7 @@ $$
 $$
 
 <center>
-    <img  src="ML\ML_figure\gini_index.png" width="50%">
+    <img  src="ML\ML_figure\gini_index.png" width="40%">
     <br>
     <div style="margin-bottom: 50px; margin-top: 20px">
         <font size="3">图1.5.3 Gini Index</font>
