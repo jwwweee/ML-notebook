@@ -5,20 +5,19 @@
 监督学习的任务主要可以归纳为两种，回归(Regression)与分类(Classification)。例如，通过房子的地段、面积、层数等特征对房价（标签）进行预测，就是一种回归任务，如图1.1.1。而根据商品的价格、评价等特征来判断商品是否应该推荐给用户，就是分类任务，如图1.1.2。
 
 <center>
-<div >
-    <div style="float:left; width:42%; padding-left:100px">
-        <img src="ML\ML_figure\regression_case.png" width="100%">
-        <div style="margin-bottom: 50px; margin-top: 20px>
+    <img  src="ML\ML_figure\regression_case.png" width="40%">
+    <br>
+    <div style="margin-bottom: 50px; margin-top: 20px">
         <font size="3">图1.1.1 Regression Task</font>
-        </div>
     </div>
-    <div style="float:right; width:57%; padding-right:100px">
-        <img src="ML\ML_figure\classification_case.png" width="100%">
-        <div style="margin-bottom: 50px; margin-top: 20px>
+</center>
+
+<center>
+    <img  src="ML\ML_figure\classification_case.png" width="50%">
+    <br>
+    <div style="margin-bottom: 50px; margin-top: 20px">
         <font size="3">图1.1.2 Classification Task</font>
-        </div>
-    </div> 
-</div>
+    </div>
 </center>
 
 ## 1.1.2 监督学习的流程 (Procedure of Supervised Learning)
@@ -32,6 +31,6 @@
     <img  src="ML\ML_figure\supervised_learning.png" width="60%">
     <br>
     <div style="margin-bottom: 50px; margin-top: 20px">
-        <font size="3">图1.1.3 Classification Task</font>
+        <font size="3">图1.1.3 Procedure of Supervised Learning</font>
     </div>
 </center>
