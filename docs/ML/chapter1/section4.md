@@ -192,8 +192,9 @@ $$
 
 $$
 \begin{aligned}
-D_{\text{KL}}(P \| Q)&=\sum_{c=1}^C p_c \cdot\left(f_Q\left(q_c\right)-f_P\left(p_c\right)\right) \\
-&=\sum_{c=1}^C p_c \cdot\left(\left(-\log _2 q_c\right)-\left(-\log _2 p_c\right)\right) \\
+D_{\text{KL}}(P \| Q)
+&=\sum_{c=1}^C p_c \cdot\left(f_Q\left(q_c\right)-f_P\left(p_c\right)\right)\\
+&=\sum_{c=1}^C p_c \cdot\left(\left(-\log _2 q_c\right)-\left(-\log _2 p_c\right)\right)\\
 &=\sum_{c=1}^C p_c \cdot\left(-\log _2 q_c\right)-\sum_{c=1}^C p_c \cdot\left(-\log _2 p_c\right)
 \end{aligned}
 \tag{1.4.12}
