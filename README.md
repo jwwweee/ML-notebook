@@ -11,8 +11,8 @@
 
 这是一本用于记录我学习机器学习到深度学习再到图卷积神经网络相关算法的 学习笔记。目前笔记还在整理阶段，将在未来一段时间内持续更新。
 
-## 作者简介
-[姜威(Wei Jiang)](https://jwwweee.github.io/)。
+## 作者
+[姜威(Wei Jiang)](https://jwwweee.github.io/)
 
 
 ## 更新日志
