@@ -4,18 +4,8 @@
 
 
 
-## 笔记简介
-在线阅读地址: [https://jwwweee.github.io/ML-notebook/#/](https://jwwweee.github.io/ML-notebook/#/)
-
-- 手机版请点开屏幕左下角菜单栏打开目录
-
-这是一本用于记录我学习机器学习到深度学习再到图卷积神经网络相关算法的学习笔记。目前笔记还在整理阶段，将在未来一段时间内持续更新。我将会把所有关于机器学习、深度学习优质内容（教学视频、笔记、博客、书籍等）集成在一起。
-
-
-## 作者简介
-[姜威(Wei Jiang)](https://jwwweee.github.io/)，目前就读于昆士兰大学(University of Queensland)，数据科学硕士。
-
-- 致谢：感谢付宇霞同学对笔记的校对和排版做出的贡献。
+## 笔记地址:
+[https://jwwweee.github.io/ML-notebook/#/](https://jwwweee.github.io/ML-notebook/#/)
 
 ## 更新日志
 笔记目前更新至机器学习部分，后续内容将持续更新...
@@ -36,8 +26,6 @@
 * [Hung-yi Lee 机器学习课程](https://speech.ee.ntu.edu.tw/~hylee/ml/2022-spring.php)
 * [刘建平Pinard 博客](https://www.cnblogs.com/pinard/)
 * [B站: 王木头学科学](https://space.bilibili.com/504715181)
-
-有待补充...
 
 ## LICENSE
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://img.shields.io/badge/license-CC%20BY--NC--SA%204.0-lightgrey" />

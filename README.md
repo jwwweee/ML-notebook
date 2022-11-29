@@ -4,16 +4,8 @@
 
 
 
-## 笔记简介
-在线阅读地址: [https://jwwweee.github.io/ML-notebook/#/](https://jwwweee.github.io/ML-notebook/#/)
-
-- 手机版请点开屏幕左下角菜单栏打开目录
-
-这是一本用于记录我学习机器学习到深度学习再到图卷积神经网络相关算法的 学习笔记。目前笔记还在整理阶段，将在未来一段时间内持续更新。
-
-## 作者
-[姜威(Wei Jiang)](https://jwwweee.github.io/)
-
+## 笔记地址:
+[https://jwwweee.github.io/ML-notebook/#/](https://jwwweee.github.io/ML-notebook/#/)
 
 ## 更新日志
 笔记目前更新至机器学习部分，后续内容将持续更新...
