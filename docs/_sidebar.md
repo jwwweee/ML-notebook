@@ -1,5 +1,4 @@
 <!-- docs/_sidebar.md -->
-- [**前言 (Introduction)**](chapter0)
 - **第一部分：机器学习 (Machine Learning)**
   - 1 监督学习 (Supervised Learning)
     - [1.1 监督学习简介 (Introduction to Supervised Learning)](ML/chapter1/section1)
